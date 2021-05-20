@@ -1,0 +1,7 @@
+{
+  "name": "myAppInAppBrowser",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
