@@ -1,22 +1,25 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import { InAppBrowser, InAppBrowserOptions } from "@ionic-native/in-app-browser";
+import { IonPage, IonButton } from '@ionic/react';
+import { InAppBrowser,InAppBrowserOptions } from '@ionic-native/in-app-browser';
 
-const websiteUrl: string = "http://localhost:8084/jw"
+const Browser: React.FC = () => {
 
-const options: InAppBrowserOptions = {
-  zoom: 'no',
-  location: 'no',
-  toolbar: 'no',
-  hidden: 'yes',
-  hideurlbar: 'yes',
-  toolbarposition: 'bottom'
-}
+    const options:InAppBrowserOptions = {
+        location: 'no',
+        zoom: 'no',
+        hideurlbar: 'yes',
+        toolbarposition: 'bottom'
+    } 
 
-const browser = InAppBrowser.create(websiteUrl, '_self', options)
+    const openBrowser = (url: string) => {
+        const browser = InAppBrowser.create(url,'_self',options);
+        // browser.executeScript(your script) // Docs aren't clear to me and i haven't tested
+        browser.show()
+    }
 
-
-browser?.on('loadstop').subscribe(event => {
-  browser.insertCSS({ code: "body{color: red; padding: 10mm;" });
-  console.log('loadstop DONE!')
-});
+    return (
+        <IonPage>
+            <IonButton onClick={()=> openBrowser('https://google.com')}>Open InAppBrowser</IonButton>
+        </IonPage>
+    );
+};
