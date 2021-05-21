@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@capacitor/app": "1.0.0",
-    "@capacitor/core": "3.0.0",
+    "@capacitor/core": "^3.0.0",
     "@capacitor/haptics": "1.0.0",
     "@capacitor/keyboard": "1.0.0",
     "@ionic-native/in-app-browser": "^5.33.0",
@@ -66,7 +66,7 @@
     ]
   },
   "devDependencies": {
-    "@capacitor/cli": "3.0.0"
+    "@capacitor/cli": "^3.0.0"
   },
   "description": "An Ionic project"
 }
