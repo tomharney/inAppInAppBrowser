@@ -22,19 +22,27 @@ import '@ionic/react/css/display.css';
 /* Theme variables */
 import './theme/variables.css';
 
-const App: React.FC = () => (
-  <IonApp>
-    <IonReactRouter>
-      <IonRouterOutlet>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route exact path="/">
-          <Redirect to="/home" />
-        </Route>
-      </IonRouterOutlet>
-    </IonReactRouter>
-  </IonApp>
-);
+import { InAppBrowser, InAppBrowserOptions } from "@ionic-native/in-app-browser";
+
+const websiteUrl: string = "https://localhost:8084/jw"
+
+const options: InAppBrowserOptions = {
+  zoom: 'no',
+  location: 'no',
+  toolbar: 'no',
+  hidden: 'yes',
+  hideurlbar: 'yes',
+  toolbarposition: 'bottom'
+}
+
+const browser = InAppBrowser.create(websiteUrl, '_self', options)
+
+
+browser?.on('loadstop').subscribe(event => {
+  browser.insertCSS({ code: "body{color: red; padding: 10mm;" });
+  console.log('loadstop DONE!')
+});
 
 export default App;
+
+
