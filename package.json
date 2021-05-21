@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "@capacitor/app": "1.0.0",
+    "@capacitor/app": "^1.0.0",
     "@capacitor/core": "^3.0.0",
-    "@capacitor/haptics": "1.0.0",
-    "@capacitor/keyboard": "1.0.0",
+    "@capacitor/haptics": "^1.0.0",
+    "@capacitor/keyboard": "^1.0.0",
     "@ionic-native/in-app-browser": "^5.33.0",
     "@ionic/cli-framework-output": "^2.2.2",
     "@ionic/react": "^5.5.0",
